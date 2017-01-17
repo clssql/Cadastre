@@ -1,0 +1,578 @@
+                      Digger Remastered (Windows version)
+                      ===================================
+
+                                   24/8/2001
+
+                                by Andrew Jenner
+
+This text file contains a subset of the information available on the official
+Digger Remastered website, which can be found at "http://www.digger.org". Also
+at this site you can find:
+  The Digger Extras pack, which contains
+    The level editor
+    Extra sets of levels
+    Digger icons
+    A screensaver
+    A utility for grabbing the DIGGER.SCO file from an original Digger floppy
+  The Digger Java applet
+  The original Windmill software games (they won't work on modern computers):
+    Digger
+    Rollo and the Brush brothers
+    Conquest
+    Styx
+    Conquest
+    Moonbugs
+    The Exterminator
+    Floppy Frenzy
+    Video Trek 88
+    Attack on Altair
+  Styx remastered
+  Source code
+  Graphics
+  Other versions of Digger:
+    Digger for DOS
+    Digger for FreeBSD/Linux/SDL
+    Digger for RiscOS
+    Digger for 32-bit DOS (with joystick support)
+  Mailing lists:
+    The Digger Update mailing list, to get informed about the latest versions
+    The Digger Chat mailing list, if you also want to chat about Digger
+    Archives
+  The Digger Hall of Fame
+  Links to related websites
+  Stories from Digger fans
+
+The information in this file is correct to the best of my knowledge. If you
+find any mistakes please let me know (contact addresses are at the end of this
+file).
+
+
+Contents
+--------
+Introduction
+Things that are working
+Known problems
+Controls
+Command line options
+Frequently Asked Questions
+What's new?
+Contact details
+Thanks to...
+
+
+Introduction
+------------
+Digger was originally created by Windmill software in 1983 and released as a
+copy-protected, bootable 5.25" floppy disk for the IBM PC. As it requires a
+genuine CGA card, it didn't work on modern PCs.
+
+In 1998, I created Digger Remastered, which runs on all PCs with CGA or better
+and plays just like the original. It also has many new features, including:
+
+* Exit button
+* Optional VGA graphics
+* Recording and playback
+* Real time speed control
+* Keyboard redefinition
+* Gauntlet mode
+* Two player simultaneous mode
+
+In 1999, Tim Draper ported Digger Remastered to Windows. This is the
+documentation file for the Windows version, WinDig.
+
+To run WinDig you need to have Windows 95, 98, ME, NT, 2000 or XP. If you're
+running it on Windows NT 4.0 you'll need service pack 3+. (I'm not sure about
+previous versions of NT.) DirectX 6 or later is especially recommended as
+without it there will be no full-screen mode and a possible performance
+penalty. DirectX 8 can be downloaded from Microsoft's website
+(http://www.microsoft.com/directx/download.asp) if you don't already have 6 or
+later but beware: it is a large download (11Mb).
+
+You'll need at least a 486 to play WinDig, but a Pentium is recommended. A
+sound card is also recommended (or you won't be able to hear the sound) as is a
+display capable of 256 colours or more.
+
+
+Things that are working
+-----------------------
+
+* Single player / 2 player game
+* 2 player simultaneous mode
+* Gauntlet mode
+* Change speed with /S switch, +/- keys on num pad, and with menu
+* Recording with F8 and with menu
+* Playback of recorded files with /E and /P switches and also with menu (use T
+  instead of Ctrl-T)
+* VGA/CGA graphics
+* Switch between Windowed and Fullscreen mode using Alt-Enter or Graphics menu)
+
+
+Known problems
+--------------
+for version (TD WIN 19990717)
+
+Graphics
+
+* Changing your screen resolution/color depth or starting a full-screen DOS
+  session while WinDig is running will cause WinDig to crash.
+* Colors are a bit strange when the game is running in full-screen mode and the
+  menus are activated or a dialog box is displayed.
+* If Windows is running at 256 color depth and you run WinDig in full-screen
+  mode, the colors in the main menu screen may occasionally be wrong.
+
+
+Keyboard & Joystick
+
+* Keyboard remapping doesn't work yet. (Unless you want to manually edit the
+  Digger.ini file...)
+* No joystick/game controller support yet.
+
+
+Sound
+
+* The sound might break up/skip a bit more than the DOS/SoundBlaster version.
+* The end-of-level tune plays too slowly on some computers (when the music is
+  on).
+* Other programs cannot use the sound card while WinDig is running, even if the
+  sound in WinDig is turned off.
+* If no version of DirectX (DirectSound) is installed on the computer but a
+  sound card is installed, you will still hear sound and music, however, the
+  sound may lag behind the action more than it would if DirectSound was
+  installed.
+
+
+Other
+
+* Using the /R switch causes WinDig to crash at the end of the game. Use the F8
+  key or the menus to record your game instead.
+* The game continues to run and accept keyboard input even when it is in the
+  background.
+* If WinDig cannot find the level-file specified in the digger.ini file, it may
+  tack on the .DLF extension (even if the filename already has an extension).
+  This may eventually cause WinDig to crash at startup. If this happens, erase
+  the LevelFile= line from the DIGGER.INI file.
+
+This hasn't been tested on very many computers, so I'm sure there are many,
+many more problems that I don't know about yet. I apologise if the program
+crashes, or locks up your computer or something. But if it does do something
+like this, please let me (Tim Draper - tim (at) digger.org) know and I will try
+to fix it as quickly as possible.
+
+If you change the sample rate or buffer size in the dialog box, you must
+restart the program for the changes to take effect. Don't put anything
+unreasonable as the sample rate, since this may cause the program to crash on
+start-up. (You can edit the INI file if this happens.)
+
+The 'Asynchronous' option improves the performance of the game while in
+Windowed mode only. You may notice that when this is checked, some of the
+flashing sprites that you normally see (when pushing bags, etc.) don't flash.
+This option has no effect when in Full Screen mode.
+
+
+Controls
+--------
+The keys you can use during the game are (by default):
+* The cursor keys Up, Down, Left and Right (or 2, 4, 6, 8 on the numeric keypad
+  if Num-lock is off) to move Digger.
+* F1 to fire.
+* Space to pause.
+* F7 to toggle background music.
+* F9 to toggle all sound.
+* F10 to return to the title screen.
+* T (cheat) to take over whilst playing back a recorded game.
+
+In two player mode the default keys for the second player are:
+* W, A, S and Z to move Digger around.
+* Tab to fire.
+(Apologies to users of non-QWERTY keyboards - I know this is a terrible choice
+for you - you'll just have to wait for a version where the keys can be
+redefined.)
+
+On the title screen press:
+* Esc or N to toggle one or two player mode.
+* F8 to save the last game if you didn't put a name on the command line.
+* F10 to exit the program.
+
+Joysticks are not yet supported in this version of Digger, but joystick support
+is planned for a future version - watch this space!
+
+
+Frequently asked questions
+--------------------------
+
+Q: How does the scoring system work?
+
+A: As follows:
+
+  * Emerald: 25 points.
+  * Eight consecutive emeralds (octave): Extra 250 points.
+  * Gold: 500 points.
+  * Killing a Nobbin or a Hobbin by shooting or hitting with a bag: 250 points.
+  * Bonus: 1,000 points.
+  * (In bonus mode) Eating a Nobbin or a Hobbin: 200 points for first, 400 for
+    2nd, etc. (doubling each time) - still 250 for other methods of killing,
+    though.
+  * At every multiple of 20,000 points you get an extra life.
+
+
+Q: What's the most you can score?
+
+A: The maximum possible score on completion of level 1 is 8,650 plus 3,900 for
+   every life used. I used to be able to repeatably obtain 8,650. The maximum
+   possible score you can have by the end of level 2 is 19,925 if you don't
+   die, so it is not possible to start level 3 with more than 2 lives in
+   reserve. I have got maximum score on the first two levels a few times.
+
+   I haven't bothered to calculate similar statistics for the other levels, but
+   I can if anyone's interested...
+
+   If you meant "What's the most you've ever scored", the answer is 75,975.
+
+
+Q: What's the most anyone's ever scored?
+
+A: Have a look at the Digger hall of fame on http://www.digger.org/fame.html to
+   find the latest top scores. If you can do better than the 10th best person
+   in the world, submit a recording of your game to Einar Johan
+   (highscore (at) digger.org).
+
+
+Q: Can you give me some tips to improve my game?
+
+A: The best I can do is suggest that you play back the recorded games in the
+   hall of fame (http://www.digger.org/fame.html) - who better to get tips from
+   than the world's best Digger players?!
+
+
+Q: What's the music that plays in the background?
+
+A: The background music for the main part of the game is called "Popcorn". It
+   was written by Gershon Kingsley in 1969 and was made popular by the group
+   "Hot Butter" in 1972. It has since been covered by many other artists.
+
+   The background music for the bonus is the William Tell Overture by Rossini.
+
+   The music which plays when you die is "Funeral March" by F. Chopin.
+
+
+Q: What other interesting things do you know about Digger?
+
+A: In my explorations of the code of the game, I have discovered lots of things
+   which might be of interest to someone.
+
+   On each new level up to level 10:
+
+   * The monsters arrive more frequently.
+   * There are more monsters in total.
+   * The number of monsters on screen at once increases.
+   * The number of times nobbins have to cross to become hobbins decreases.
+   * The monsters move slightly faster on average (their speed is actually
+     random).
+   * The monsters less frequently stop chasing you (they always chase you on
+     level 6 and above).
+   * Hobbins stay hobbins for longer.
+   * Gold hangs around for less long.
+   * Fire takes longer to recharge.
+   * Bonus mode lasts for less long.
+
+   Levels above 10 use the same variables as level 10 but different layouts.
+
+   The level plan is 1-2-3-4-5-6-7-8-6-7-8 followed by the sequence 5-6-7-8
+   repeated 247 times. If you complete level 8 249 times, all the subsequent
+   levels use the layout from level 5.
+
+   Gold (as in a broken bag) disappears very quickly if you dig underneath it.
+
+   Monsters going up change direction when there is a bag falling on them, but
+   they do the same thing even if the bag is below them in the same column.
+
+   Player 2 (in two player mode, obviously) doesn't get the extra life until
+   after multiples of 20,000. Player 1 (in either mode) gets it *at* multiples
+   of 20,000.
+
+   The noise made when you complete a level is polyphonic if no background
+   music has been played since the game was started.
+
+   The original game allocated enough resources for 6 monsters, but only 5 are
+   on screen at any given time. By changing a single byte in the original
+   executable, you could make all 6 appear at the same time.
+
+   When you get a game over and no high score, the screen used to flash between
+   its two colour schemes for a while, but the original didn't do this on my
+   8086. Apparently it did on some other people's computers, though, so it must
+   have been a hardware oddity. It was taking ages to get back to the title
+   screen, so I removed it.
+
+   In the original, you couldn't collect more than 4 spare lives. If you got
+   60,000 points without dying, you wouldn't get an extra life at that point.
+   Some people thought this was unfair, so in Digger Remastered I added an
+   option (/U) to allow you to collect as many lives as you like. However,
+   care should be exercised using this option if you intend to record a game
+   for the hall of fame, since your score will be calculated as if you played
+   by the original rules. So you might not have as many lives as you thought
+   you did, and your game might finish sooner. A few people have been caught
+   out by this.
+
+   There are no more extra lives to be had at or after the 1 million point
+   mark. Although this was a bug in the original Digger (a kludge really -
+   Windmill software never counted on anyone getting that far) I've kept it on
+   in Digger Remastered to give an extra little bit of difficulty to anyone
+   that good.
+
+
+Q: Can you send me this other game I used to play called...?
+
+A: No. Try http://www.digger.org/links.html - I haven't got time to go
+   searching the web for you if you can't be bothered to work out how to do it
+   yourself.
+
+
+Q: Can I send you this other game I used to play called...?
+
+A: Please don't send me games over email unless I ask you to - it makes my
+   email take forever to download, and chances are I have it already (or could
+   easily find it on the web). If you really want to send something, email me
+   first describing exactly what it is and how big it is, and ask me if I want
+   it. If I do, I'll tell you the best way for you to get it to me.
+
+
+Q: I have found a bug in Digger. Can you fix it?
+
+A: First download the latest version from http://www.digger.org and see if your
+   bug still happens with that. If it doesn't, I already fixed it. If it does,
+   please send me details of the bug, the operating system and version of
+   Digger you are using, the command line parameters you gave to Digger and
+   (if applicable) a .DRF file which reproduces the bug.
+
+
+Q: Where can I get the original version of Digger?
+
+A: I don't know. It is impossible to download it from the internet because it
+   is hardware, not software (a copy protected floppy disk, as opposed to the
+   program on it). If you had that disk you'd still need a 4.77MHz PC with
+   genuine CGA graphics and a 5.25" floppy disk drive to run it.
+
+   However, many people played the old Digger without the original disk. It is
+   possible to extract the program from its disk, a process known as "ripping".
+   If you do this, it still doesn't work because because the game is copy
+   protected. It is possible to remove the copy protection (a process called
+   "cracking"). After these steps, the game will run but it will run too fast
+   unless you have an 4.77MHz PC, and you won't be able to see it unless you
+   have CGA. Also, if you were to get a high score, it would try to save it on
+   the disk in drive A, possibly wiping out some of the information on any such
+   disk.
+
+   The ripped copies of Digger, Styx, Moonbugs, Conquest, Rollo, The
+   Exterminator and Floppy Frenzy which you can download at
+   http://www.digger.org have been cracked and modified not to save their
+   scores. Nothing else has been done to them, however, so you they run too
+   fast and the graphics are broken in some of them.
+
+   A more original (although less useful) downloadable version of one of these
+   games would be an "image" of the original disk (not a picture but a file
+   containing all the data from the disk: boot sector, file allocation tables
+   and all.) I don't have any disk images of original Windmill disks, nor do I
+   want any - I have no use for them, except to put on the website, and I won't
+   do that unless there is sufficient demand for it. However, I intend to soon
+   put modified disk images of the Windmill games on the website for use with
+   emulators such as MESS (http://mess.emuverse.com).
+
+   If you actually want to play Digger, I suggest you download Digger
+   Remastered. It plays and sounds exactly the same as the original did, looks
+   the same if you use the /C option, and works on all the same computers as
+   well as more modern ones. In fact, if you play them both on a computer or
+   emulator on which the original Digger works properly, you would be hard
+   pushed to tell them apart (except for slight timing differences).
+
+
+Q: Is this legal?
+
+A: Yes! Recently the original author of Digger, Rob Sleath, contacted me. He no
+   longer owns the copyright to Digger (or the other games) but he did retain
+   the right to use the code for development of other products. He considers
+   Digger Remastered to be another product, and has granted me copyright to
+   Digger Remastered, which I have chosen to license under the GNU GPL.
+
+
+What's New?
+-----------
+4 Sep 2004: Added lots of new information about Windmill,
+pictures and the original source code to Digger and Styx to the website.
+
+14 Mar 2002: Maxim Sobolev released a new version of Unix/SDL Digger.
+
+2 Mar 2002: Added Christian Bird's 3D Digger graphics to the website. Added the
+original instructions.
+
+14 Nov 2001: Einar Johan is taking over the hall of fame as of today. He has
+big plans for it!
+
+2 Sep 2001: Added the graphics editing package to the download page.
+
+24 Aug 2001: Rewrote the WINDIG.TXT file and the website.
+
+18 Aug 2001: I thoroughly rewrote the DIGGER.TXT file distributed with the DOS
+version, removing redundant information and adding some new things. This file
+will no longer be synchronized with the website, at least for the moment.
+
+17 Feb 2001: Video Trek 88 added to downloads.
+
+18 Oct 2000: Two new links added to the sidebar - Styx and Sopwith are the
+latest games to get the remastering treatment.
+
+13 Apr 2000: Score saving bug in SDL Digger fixed.
+
+7 Apr 2000: Maxim Sobolev's SDL version released, allowing users of FreeBSD and
+GNU/Linux to play Digger natively.
+
+8 Feb 2000: Minor bug in level editor fixed (thanks for Mariusz Borkowski for
+finding it).
+
+29 Jul 1999: Marek Futrega's Digger Java Applet added to the website.
+
+18 Jul 1999: Major new version of WinDig: CGA graphics, DLF and DRF files on
+the menu. The source code to the changes has not been uploaded yet.
+
+11 Jul 1999: Major website redesign and updates to many versions. New level
+editor.
+
+24 May 1999: The source code is now available from the website.
+
+6 May 1999: Minor bugfix release. Protected mode version released.
+
+16 Apr 1999: Minor bugfixes in WinDig.
+
+8 Apr 1999: WinDig now doesn't need DirectX at all. DOS Digger will now record
+and playback really huge DRF files correctly.
+
+3 Apr 1999: Update to Windows version: now runs correctly in 256 colour mode
+and without DirectDraw 6.
+
+2 Apr 1999: More slight bug fixes in DOS version.
+
+1 Apr 1999: Slight bug fixes in both DOS and Windows versions.
+
+28 Mar 1999: Windows 95 version added, thanks to Tim Draper. SoundBlaster music
+now works. Various other tweaks and bug fixes.
+
+30 Jan 1999: Bug fix: Recording two-player simultaneous games with the music
+off now works properly. If you have any two-player simultaneous recordings
+which you want to keep but which now do not playback, send them to me and I'll
+see if I can fix them.
+
+28 Jan 1999: Bug fix: You can't lose all your lives in Gauntlet mode any more.
+
+21 Jan 1999: Bug fix: In old-style two-player mode, player one doesn't get all
+the points for bags killing monsters.
+
+18 Jan 1999: Bug fix: Digger doesn't stall if you pause for too long.
+
+15 Jan 1999: Unlimited lives (/U) and start at different level (/I) cheat
+switches added to Digger at the request of players.
+
+13 Jan 1999: SoundBlaster cards using IRQ numbers 8 to 15 should now work. Bug
+with more than 4 spare lives fixed. Vsynch option restored for those with
+serious timing problems.
+
+12 Jan 1999: The SoundBlaster sound should now work on genuine SoundBlaster
+sound cards. Thanks to Tomer Gabel for finding the cause of this bug.
+Recommended extension for level data files changed from .DAT to .DLF.
+
+9 Jan 1999: Yet another bug fix: You now don't die twice if you die whilst
+completing a level.
+
+8 Jan 1999: More bugs in old two player mode and keyboard redefinition fixed.
+
+5 Jan 1999: SoundBlaster sound added, although it may not work properly and
+there's no background music yet. Bug fixes: Old two player mode now works, and
+some bugs in the keyboard redefinition routines have been fixed.
+
+15 Dec 1998: Bug fix: keyboard redefinition in two player simultaneous mode now
+works.
+
+13 Dec 1998: Two player simultaneous mode (/2 option) added.
+
+9 Dec 1998: Digger level editor added. This is a Windows program and should be
+pretty self explanatory to use, so there isn't any information about how to use
+it here.
+
+7 Dec 1998: Bug fix for Gauntlet mode high score table, added /V and /T command
+line options to help with timing problems.
+
+25 Nov 1998: Gauntlet mode added.
+
+20 Nov 1998: Minor bug fixes to do with the high scores, playback and taking
+over.
+
+18 Nov 1998: Minor timing bug fixed. Major timing bug caused by fixing minor
+timing bug fixed.
+
+14 Nov 1998: Hall of fame revamped.
+
+13 Nov 1998: Keyboard redefinition (/K option) added.
+
+4 Nov 1998: New URL: "http://www.digger.org". Minor bug fix for /O option.
+
+21 Oct 1998: Minor changes so you can playback a recording as a screensaver.
+
+18 Oct 1998: Another minor bug fix: you can't score twice for killing one
+monster.
+
+17 Oct 1998: Update to RiscOS version: minor bug fixes and sound added.
+
+16 Oct 1998: RiscOS version added. Minor bug fix to DOS version making the
+keyboard work more like it did in the original. Speed control and playback
+cheat added.
+
+15 Oct 1998: Major new version! Most of the changes are invisible but will help
+with future development. However, there are some major new features, including
+a greatly improved recording/playback feature, which you will need if you want
+to get on the new Hall of Fame.
+
+13 Oct 1998: Digger chat mailing list added. You can subscribe at
+"http://www.onelist.com/subscribe.cgi/diggerchat".
+
+22 Sep 1998: Four new sets of levels added in the extra level pack.
+
+8 Sep 1998: Trivia section added in the FAQ list.
+
+7 Aug 1998: If you liked Digger, try Styx, the latest game from Windmill
+Software / Andrew Jenner.
+
+28 Jul 1998: DRF compressor program (now obsolete) and DRF files added.
+
+25 Jul 1998: Digger should now run on slower computers.
+
+21 Jul 1998: Minor changes to website and documentation, added counter (see
+"http://w116.hitbox.com/Stats?hb=W42904163261" for our statistics.)
+
+20 Jul 1998: Website was redesigned and "What's New?" section was added.
+
+
+Contact details
+---------------
+For general information about Digger, contact me. If you have access to email
+this is the best way to do it - my address is aj (at) digger.org.
+
+You can also visit my blog at http://www.reenigne.org if you're interested.
+
+For information about WinDig in particular, contact Tim Draper on
+tim (at) digger.org.
+
+
+Thanks to...
+------------
+
+Matthias Wermann (matt (at) digger.org) for the very generous donation of the
+digger.org domain name and web space. Matthias runs an ISP, the URL of which
+is "http://www.emsnet.de".
+
+Avi Ben Zev for setting up the original Digger Chat mailing list and for
+getting in touch with Windmill Software.
+
+Jim Leonard (trixter (at) oldskool.org) for all his advice and encouragement.
+
+Windmill Software, for creating the games in the first place.
+
+Finally, thanks to all the Digger fans - without you none of this would be
+possible.
